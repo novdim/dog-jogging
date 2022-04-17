@@ -1,7 +1,6 @@
 # Задача программы: посчитать сколько раз пробежит собака от одного друга к другому прежде чем они встретятся.
 
-
-def digit_check(Namber): #функция проверка ввода числа
+def digit_check(Namber): #функция проверки ввода числа
     while True:
         try:
             namber = int(input(Namber + '\n'))
@@ -18,15 +17,15 @@ dogSpeed = digit_check("Введите скорость собаки: ")
 distance = digit_check("Введите расстояние между 1 и 2 другом. (м): ")
 distanceMeeting = digit_check("Введите расстояние на котором друзья встретятся (м): ")
 
-count = 0 # кол-во раз сколько собака пробежит от одного друга до другого
+count = 0 # счетчик кол-ва раз сколько собака пробежит от одного друга до другого
 
-while distance > distanceMeeting:
+while distance > distanceMeeting: # выполняем цикл пока друзья не встрется
     if friend == 1:
-        time = distance / (dogSpeed + secondFriendSpeed)
-        friend = 2
+        time = distance / (dogSpeed + secondFriendSpeed) # расчитываем время за которое собака пробежит от одного друга к другому
+        friend = 2 # меняем направление собаки
     else:
-        time = distance / (dogSpeed + firstFriendSpeed)
-        friend = 1
-    count = count + 1
-    distance = distance - time * (firstFriendSpeed + secondFriendSpeed)
-print('Собака ' + str(count) + ' раз(а) пробежит от 1 до 2 друга')
+        time = distance / (dogSpeed + firstFriendSpeed) # расчитываем время за которое собака пробежит от одного друга к другому
+        friend = 1 # меняем направление собаки
+    distance = distance - time * (firstFriendSpeed + secondFriendSpeed) # расчитываем оставшуюся дистанцию между друзьями
+    count = count + 1 # увеличиваем счетчик пробежек на 1
+print('Собака ' + str(count) + ' раз(а) пробежит от 1 до 2 друга') 
